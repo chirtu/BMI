@@ -56,7 +56,6 @@ void initState() {
                             children: [
                               Container(
                                 padding: EdgeInsets.all(10),
-                                height:  size.height*.45,
                                 width: size.width,
                                 decoration: BoxDecoration(
                                   color: colors.white,
@@ -102,7 +101,37 @@ void initState() {
                                                   )]
                                             )]),
                                     ),
+                                   if(double.parse(widget.BmiResult)<=18.5) Center(child: Text(keyWord.badShape,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: colors.blue),)),
+                                   if(double.parse(widget.BmiResult)>=18.6) Center(child: Text(keyWord.goodShape,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: colors.blue),)),
+                                   SizedBox(height: 10,) ,
+                                    Stack(
+                                      children: [
+                                        Container(
+                                            width: double.infinity ,
+                                            height: 30,
+                                            padding: EdgeInsets.all(10),
+                                            decoration: BoxDecoration(
+                                              color: colors.white,
+                                              border: Border.all(color: Colors.cyan),
+                                              borderRadius: BorderRadius.circular(20),
+                                            ),
+                                            child: Padding(
+                                              padding:  EdgeInsets.only(left: size.width *.6),
 
+                                            )),
+                                        Container(
+                                            // padding: EdgeInsets.all(10),
+                                            height: 30,
+                                            width: size.width *.3,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(color: Colors.cyan),
+                                              color: colors.blue,
+                                              borderRadius: BorderRadius.circular(20),
+                                            ),
+                                            child:Center(child: Text('Body Mass Index', style: TextStyle( color: colors.white,fontSize: 12),))),
+                                      ],
+                                    ),
+                                    SizedBox(height: 20,),
                                     Row(
                                      crossAxisAlignment: CrossAxisAlignment.start,
                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,

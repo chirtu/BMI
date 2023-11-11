@@ -36,5 +36,9 @@ class CustomKeyWord {
   final String valueObese = "86.7-102.3";
   final String valueVerObese = "102.3-115.6";
 
+  //CONDTINOTIN
+  final String goodShape = "You are in Good Shape";
+  final String badShape = "You are in Bad Shape";
+
 }
 CustomKeyWord keyWord = CustomKeyWord();
