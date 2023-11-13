@@ -3,7 +3,6 @@ import 'package:bmicalcutor/constants/colors.dart';
 import 'package:bmicalcutor/constants/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:speedometer_chart/speedometer_chart.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class BmiPage extends StatefulWidget {
@@ -18,9 +17,6 @@ class BmiPage extends StatefulWidget {
 
 class _BmiPageState extends State<BmiPage> {
 @override
-void initState() {
-    super.initState();
-  }
 
 
   @override
@@ -80,8 +76,9 @@ void initState() {
                                                   GaugeRange(startValue: 0.0, endValue:15.0 , color:colors.grey),
                                                   GaugeRange(startValue: 16, endValue:18.4 , color:colors.darkblue),
                                                   GaugeRange(startValue: 18.5, endValue:24.9 , color:colors.green),
-                                                  GaugeRange(startValue: 25.0,endValue: 29.9,color: colors.orange),
-                                                  GaugeRange(startValue: 30,endValue: 40,color: colors.red)],
+                                                  GaugeRange(startValue: 25.0,endValue: 29.9,color: colors.yellow),
+                                                  GaugeRange(startValue: 30,endValue: 34.9,color: colors.orange),
+                                                  GaugeRange(startValue: 35,endValue: 40,color: colors.red)],
                                                 pointers: <GaugePointer>[
                                                   NeedlePointer(
                                                       value: double.parse(widget.BmiResult),
@@ -101,9 +98,11 @@ void initState() {
                                                   )]
                                             )]),
                                     ),
-                                   if(double.parse(widget.BmiResult)<=18.5) Center(child: Text(keyWord.badShape,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: colors.blue),)),
-                                   if(double.parse(widget.BmiResult)>=18.6) Center(child: Text(keyWord.goodShape,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: colors.blue),)),
-                                   SizedBox(height: 10,) ,
+                                    if(double.parse(widget.BmiResult)<=18.5) Center(child: Text(keyWord.badShape,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: colors.blue),)),
+                                    if(double.parse(widget.BmiResult)>=18.6 && double.parse(widget.BmiResult)<=29.9 ) Center(child: Text(keyWord.goodShape,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: colors.blue),)),
+                                    if(double.parse(widget.BmiResult)>=29.9 && double.parse(widget.BmiResult)<=34.9  ) Center(child: Text(keyWord.worseShape,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: colors.blue),)),
+                                    if( double.parse(widget.BmiResult)>=35 ) Center(child: Text(keyWord.goodShape,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: colors.blue),)),
+                                    SizedBox(height: 10,) ,
                                     Stack(
                                       children: [
                                         Container(
