@@ -38,6 +38,7 @@ class CustomKeyWord {
 
   //CONDTINOTIN
   final String goodShape = "You are in Good Shape";
+  final String worseShape = "You are Going  to Worse Shape";
   final String badShape = "You are in Bad Shape";
 
 }
