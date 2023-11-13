@@ -147,6 +147,7 @@ class _BmiPageState extends State<BmiPage> {
                                            Text(keyWord.excessiceUnderWeight,style: TextStyle(fontSize: 12),),
                                          ],
                                        ),
+
                                        Text(keyWord.less+keyWord.valueExes+" "+keyWord.kg,style: TextStyle(fontSize: 12),),
                                      ],
                                    ),
@@ -278,7 +279,7 @@ class _BmiPageState extends State<BmiPage> {
                                                 child: Image.asset("assets/icons/rule.png")),                                            Text(keyWord.height, style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),) ,
                                           ],
                                         ),
-                                        Text(widget.height+" "+ keyWord.kg, style: TextStyle(color: Colors.blue),)
+                                        Text(widget.height+" "+ keyWord.cm, style: TextStyle(color: Colors.blue),)
                                       ],
                                     ),
                                     Divider(thickness: 2,endIndent: 10,indent: 10,),
@@ -294,7 +295,7 @@ class _BmiPageState extends State<BmiPage> {
                                             Text(keyWord.weight, style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),) ,
                                           ],
                                         ),
-                                        Text(widget.weight +" "+ keyWord.cm, style: TextStyle(color: Colors.blue),)
+                                        Text(widget.weight +" "+ keyWord.kg, style: TextStyle(color: Colors.blue),)
                                       ],
                                     ),
                                   ],

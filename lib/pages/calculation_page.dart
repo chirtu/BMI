@@ -140,9 +140,6 @@ class _BmiPageState extends State<CalculationPage> {
     double dweight = double.tryParse(weight.text) ?? 0.0;
     double dheight = double.tryParse(height.text) ?? 0.0;
 
-    print(weight.text);
-    print(height.text);
-
     if (dweight > 0 && dheight > 0) {
       //change height from centimeter to meter
       double HinMeter = dheight / 100.0;
@@ -152,7 +149,6 @@ class _BmiPageState extends State<CalculationPage> {
 
       setState(() {
         Result = double.parse(bmi.toStringAsFixed(1));
-
         Navigator.push(context, MaterialPageRoute(builder: (context)=>BmiPage(weight: weight.text, BmiResult: Result.toString(), height:height.text,)));
       });
 
